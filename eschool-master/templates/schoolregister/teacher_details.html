@@ -1,0 +1,13 @@
+{% extends "schoolregister/__base.html" %}
+
+{% block title %}{{ teacher.full_name }}{% endblock %}
+
+{% block content %}
+<h2>
+    {{ teacher.full_name }}
+</h2>
+<p>
+    specialization: {{ teacher.specialization }}<br />
+    email: <a href="mailto:{{ teacher.email }}">{{ teacher.email }}</a>
+</p>
+{% endblock %}

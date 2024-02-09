@@ -1,0 +1,18 @@
+{% extends "schoolregister/__base.html" %}
+
+{% block title %}class {{ group.abbrev }}{% endblock %}
+
+{% block content %}
+<h2>Class {{ group.abbrev }}</h2>
+<p>Supervisor: <a href="{% url 'schoolregister:teacher_details'  group.supervisor.id %}">{{ group.supervisor }}</a></p>
+{% endblock %}
+
+{% block left-column %}
+  <h4>Students</h4>
+  {% include 'schoolregister/_students.html' %}
+{% endblock %}
+
+{% block right-column %}
+  <h4>Subjects</h4>
+  {% include 'schoolregister/_taughts.html' with taughts=group.taught_set.all %}
+{% endblock %}

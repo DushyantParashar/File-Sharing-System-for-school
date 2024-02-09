@@ -1,0 +1,17 @@
+{% block header %}
+<header>
+    <div id="logo">
+        <h1><a href="{% url 'home:index' %}">eSchool</a></h1>
+    </div>
+    <div id="user-panel">
+        {% if user.is_authenticated %}
+        <p>welcome, {{ user.first_name }}</p>
+        <a class="button" href="{% url 'home:profile' user.id %}">My Profile</a>
+        <a class="button" href="{% url 'home:logout' %}">Logout</a>
+        {% else %}
+        <a class="button" href="{% url 'home:login' %}">Login</a>
+        {% endif %}
+        <br class="clearfix" />
+    </div>
+</header>
+{% endblock %}

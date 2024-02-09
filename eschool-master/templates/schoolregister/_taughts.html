@@ -1,0 +1,9 @@
+{% block taughts %}
+  <ul>
+    {% for taught in taughts %}
+      <li>
+        <a href="{% url 'schoolregister:taught_details' taught.id %}">{{ taught }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
